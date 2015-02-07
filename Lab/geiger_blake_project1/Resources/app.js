@@ -233,11 +233,26 @@ var arrViews = [pointView, defenseView, goalieView];
 
 var counter = 0;
 
+//if counter < max
+//increase the counter
+//add based on counter
+
+
+
 previous.addEventListener('click',function(){
 	counter--;
 	win.add(arrViews[counter]);
 });
 next.addEventListener('click',function(){
-	counter++;
-	win.add(arrViews[counter]);
+	if(counter<arrViews.length-1){
+		counter ++;
+		win.add(arrViews[counter]);
+		console.log("increased");
+	}else{
+		counter=0;
+		win.add(arrViews[counter]);
+		console.log("reset");
+	}
+	
+	
 });
