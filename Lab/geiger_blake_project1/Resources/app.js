@@ -21,14 +21,7 @@ var label1 = Ti.UI.createLabel({
   top: 22,
   width: 100, height: 20
 });
-var label2 = Ti.UI.createLabel({
-  color: "#90ffffff",
-  font: { fontSize:12 },
-  text: '<Previous',
-  textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-  top: 22,
-  width: 370, height: 20
-});
+
 var fly = Ti.UI.createView({
 	backgroundImage: "flyLogo.jpg",
 	left: 20,
@@ -123,12 +116,14 @@ var buy = Ti.UI.createLabel({
 	top: 100,
 	left: 170
 });
+
 var view4 = Ti.UI.createView({
 	backgroundColor: "orange",
 	//propeties
 	width: 375,
 	height: 30,
-	top:175,
+	top: 0,
+
 });
 var points = Ti.UI.createLabel({
 	color: "#ffffff",
@@ -144,7 +139,8 @@ var giroux = Ti.UI.createView({
 	width: 120,
 	height: 100,
 	left: 20,
-	top: 220
+	top:40,
+	
 });
 var berg = Ti.UI.createView({
 	backgroundImage: "berg.jpg",
@@ -152,7 +148,7 @@ var berg = Ti.UI.createView({
 	width: 120,
 	height: 100,
 	right: 20,
-	top: 220
+	top:40,
 });
 var claude = Ti.UI.createLabel({
 	color: "#ffffff",
@@ -161,7 +157,8 @@ var claude = Ti.UI.createLabel({
 	text: "Claude Giroux \n52 Points \n16 Goals \n36 Assists",
 	width: 120,
 	height: 100,
-	top: 330
+	top: 150,
+	
 });
 var patrice = Ti.UI.createLabel({
 	color: "#ffffff",
@@ -170,12 +167,46 @@ var patrice = Ti.UI.createLabel({
 	text: "Patrice Bergeron \n34 Points \n13 Goals \n21 Assists",
 	width: 130,
 	height: 100,
-	top: 330
+	top: 150,
+
 });
+var previous = Ti.UI.createLabel({
+	color: "#90ffffff",
+	font: {fontSize:14},
+	left: 10,
+	text: "<Previous",
+	width: 130,
+	height: 20,
+	top: 420,
+	
+});
+var next = Ti.UI.createLabel({
+	color: "#90ffffff",
+	font: {fontSize:14},
+	right: 10,
+	text: "Next>",
+	width: 40,
+	height: 20,
+	top: 420,
+	
+});
+var pointView = Ti.UI.createView({
+	backgroundColor: "transparent",
+	top:175,
+});
+var defenseView = Ti.UI.createView({
+	backgroundColor: "black",
+	top:175,
+});
+var goalieView = Ti.UI.createView({
+	backgroundColor: "black",
+	top: 175,
+});
+
+
 win.open();
 win.add(view1);
 win.add(label1);
-win.add(label2);
 win.add(fly);
 win.add(bru);
 win.add(phi);
@@ -187,9 +218,24 @@ win.add(view3);
 win.add(match);
 win.add(ros);
 win.add(buy);
-win.add(view4);
+pointView.add(giroux, berg, claude, patrice, view4, next, previous);
+win.add(pointView);
 win.add(points);
-win.add(giroux);
-win.add(berg);
-win.add(claude);
-win.add(patrice);
+win.add(previous);
+win.add(next);
+
+
+
+
+var arrViews = [pointView, defenseView, goalieView];
+
+previous.addEventListener('click',function(){
+	win.add(arrViews[2]);
+	var goalie = require('goalie');
+	win.add(goalieView);
+});
+next.addEventListener('click',function(){
+	win.add(arrViews[1]);
+	var defense = require('defense');
+	win.add(defenseView);
+});
