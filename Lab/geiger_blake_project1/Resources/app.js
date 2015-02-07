@@ -224,18 +224,20 @@ win.add(points);
 win.add(previous);
 win.add(next);
 
-
-
+	var goalie = require('goalie');
+	
+	var defense = require('defense');
+	
 
 var arrViews = [pointView, defenseView, goalieView];
 
+var counter = 0;
+
 previous.addEventListener('click',function(){
-	win.add(arrViews[2]);
-	var goalie = require('goalie');
-	win.add(goalieView);
+	counter--;
+	win.add(arrViews[counter]);
 });
 next.addEventListener('click',function(){
-	win.add(arrViews[1]);
-	var defense = require('defense');
-	win.add(defenseView);
+	counter++;
+	win.add(arrViews[counter]);
 });
