@@ -33,26 +33,6 @@ var tuuk = Ti.UI.createLabel({
 	height: 100,
 	top: 150
 });
-var previous = Ti.UI.createLabel({
-	color: "#90ffffff",
-	font: {fontSize:14},
-	left: 10,
-	text: "<Previous",
-	width: 130,
-	height: 20,
-	top: 240,
-	
-});
-var next = Ti.UI.createLabel({
-	color: "#90ffffff",
-	font: {fontSize:14},
-	right: 10,
-	text: "Next>",
-	width: 40,
-	height: 20,
-	top: 240,
-	
-});
 var view4 = Ti.UI.createView({
 	backgroundColor: "orange",
 	//propeties
@@ -69,6 +49,6 @@ var goalies = Ti.UI.createLabel({
 	height:30,
 	top: 1
 });
-goalieView.add(mase, steve, rask, tuuk, previous, next, view4, goalies);
+goalieView.add(mase, steve, rask, tuuk, view4, goalies);
 
 exports.goalieView = goalieView;

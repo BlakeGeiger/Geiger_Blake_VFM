@@ -34,26 +34,6 @@ var bigZ = Ti.UI.createLabel({
 	height: 100,
 	top: 150
 });
-var previous = Ti.UI.createLabel({
-	color: "#90ffffff",
-	font: {fontSize:14},
-	left: 10,
-	text: "<Previous",
-	width: 130,
-	height: 20,
-	top: 240,
-	
-});
-var next = Ti.UI.createLabel({
-	color: "#90ffffff",
-	font: {fontSize:14},
-	right: 10,
-	text: "Next>",
-	width: 40,
-	height: 20,
-	top: 240,
-	
-});
 var view4 = Ti.UI.createView({
 	backgroundColor: "orange",
 	//propeties
@@ -70,7 +50,7 @@ var defense = Ti.UI.createLabel({
 	height:30,
 	top: 1
 });
-defenseView.add(mark, streit, bigZ, chara, previous, next, view4, defense);
+defenseView.add(mark, streit, bigZ, chara, view4, defense);
 
 exports.defenseView = defenseView;
 

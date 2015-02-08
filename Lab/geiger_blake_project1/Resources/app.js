@@ -197,10 +197,12 @@ var pointView = Ti.UI.createView({
 var defenseView = Ti.UI.createView({
 	backgroundColor: "black",
 	top:175,
+	bottom:250,
 });
 var goalieView = Ti.UI.createView({
 	backgroundColor: "black",
 	top: 175,
+	bottom:250,
 });
 
 
