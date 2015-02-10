@@ -69,7 +69,12 @@ var dinnerSection = Ti.UI.createTableViewSection({
 });
 
 //ADD ROWS TO SECTIONS
-for()
+//for(i=0; i<array.length; i++){
+//	create row
+//customize style
+//set row title
+//section.add(row);	
+//}
 var row = Ti.UI.createTableViewRow({
 	title: breakfastItems[0].title,
 });
