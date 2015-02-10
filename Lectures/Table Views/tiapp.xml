@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.dingus.eventListeners</id>
-    <name>3.1 Event Listeners</name>
+    <id>com.dingus.tableviews</id>
+    <name>4.1 Table Views</name>
     <version>1.0</version>
     <publisher>blakegeiger</publisher>
     <url>http://</url>
-    <description>undefined</description>
+    <description/>
     <copyright>2015 by blakegeiger</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>64611fb4-a9e9-47a0-882e-a54a0a4d9f5d</guid>
+    <guid>a81b3e5c-139d-4925-af7e-62742daf952e</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.dingus.eventListeners</id>
-    <name>3.1 Event Listeners</name>
+    <id>com.dingus.clickTime</id>
+    <name>Click Time</name>
     <version>1.0</version>
     <publisher>blakegeiger</publisher>
     <url>http://</url>
@@ -11,7 +11,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>64611fb4-a9e9-47a0-882e-a54a0a4d9f5d</guid>
+    <guid>ff515470-a5f0-4413-9885-cae866b9df5f</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>
@@ -53,7 +53,7 @@
         <target device="blackberry">false</target>
         <target device="ipad">true</target>
         <target device="iphone">true</target>
-        <target device="mobileweb">false</target>
+        <target device="mobileweb">true</target>
     </deployment-targets>
     <sdk-version>3.5.0.GA</sdk-version>
 </ti:app>
