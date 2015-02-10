@@ -1,3 +1,57 @@
+var home = Ti.UI.createWindow({
+	backgroundColor: "#000000",
+	 statusBarStyle: Titanium.UI.iPhone.StatusBar.LIGHT_CONTENT,
+});
+
+var table = Ti.UI.createLabel({
+	color: "#ffffff",
+	font: {fontSize:30},
+	text: "Table View",
+});
+var tableView = Ti.UI.createView({
+	backgroundColor: "orange",
+	borderColor: "#ffffff",
+	width: 350,
+	height: 80,
+	top:200,
+});
+
+var list = Ti.UI.createLabel({
+	color: "#ffffff",
+	font: {fontSize:30},
+	text: "List View",
+});
+
+var listView = Ti.UI.createView({
+	backgroundColor: "orange",
+	borderColor: "#ffffff",
+	width: 350,
+	height: 80,
+	bottom: 200,
+	
+});
+var name = Ti.UI.createLabel({
+	color: "orange",
+	font: {fontSize:30},
+	text: "Flyers Roster",
+	top: 60,
+});
+
+tableView.addEventListener('click',function(){
+	win.add(table);
+	win.open();
+
+});
+
+listView.add(list);
+tableView.add(table);
+//home.add(table);
+home.add(tableView);
+//home.add(list);
+home.add(listView);
+home.add(name);
+
+home.open();
 //create window
 var win = Ti.UI.createWindow({
 	backgroundColor: "#FBFBF4",
@@ -108,5 +162,5 @@ if(osName === "iPhone OS"){
 	
 }
 //open
-win.open();
-win.add(table);
+//win.open();
+//
