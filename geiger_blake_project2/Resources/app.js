@@ -1,68 +1,66 @@
 var home = Titanium.UI.createWindow({
     backgroundColor: 'black',
-    title: 'Rosters',
+    backgroundImage: "flyers.jpg",
+    title: 'Flyers App',
 });
 
 var win1 = Titanium.UI.iOS.createNavigationWindow({
    window: home
 });
 
-var win = Ti.UI.createWindow({
+var winTable = Ti.UI.createWindow({
 	backgroundColor: "#FBFBF4",
-	 title: "Flyers App",
+	 title: "Player Stats",
  });
 
-
-var closeTableButton = Titanium.UI.createButton({
-    title: 'Close Table View'
-});
-closeTableButton.addEventListener('click', function(){
-    win1.closeWindow(win, {animated:false});
-});
-
-win.add(closeTableButton);
+ var winView = Ti.UI.createWindow({
+ 	backgroundColor: "FBFBF4",
+ 	title: "Player Bios"
+ });
 
 var tableLabel = Ti.UI.createLabel({
 	color: "#ffffff",
-	font: {fontSize:30},
-	text: "Table View",
+	font: {fontSize:20},
+	text: "Player Stats",
 });
 var tableView = Ti.UI.createView({
 	backgroundColor: "orange",
 	borderColor: "#ffffff",
-	width: 350,
+	width: 150,
 	height: 80,
-	top:200,
+	bottom: 100,
+	left: 20,
 });
 
 var listLabel = Ti.UI.createLabel({
 	color: "#ffffff",
-	font: {fontSize:30},
-	text: "List View",
+	font: {fontSize:20},
+	text: "Player Bios",
 });
 
 var listView = Ti.UI.createView({
 	backgroundColor: "orange",
 	borderColor: "#ffffff",
-	width: 350,
+	width: 150,
 	height: 80,
-	bottom: 200,
+	bottom: 100,
+	right: 20,
 	
 });
-var name = Ti.UI.createLabel({
-	color: "orange",
-	font: {fontSize:30},
-	text: "Flyers Roster",
-	top: 60,
-});
 
-var data = require("array");
-console.log(data.rosterTable);
+var dataTable = require("array");
+var dataView = require("listView");
 
 tableView.addEventListener('click',function(){
-	win1.openWindow(win);
-	win.add(data.rosterTable);
+	win1.openWindow(winTable);
+	winTable.add(dataTable.rosterTable);
 });
+
+listView.addEventListener('click', function(){
+	win1.openWindow(winView);
+	winView.add(dataView.list);
+});
+
 
 listView.add(listLabel);
 tableView.add(tableLabel);
@@ -70,7 +68,6 @@ tableView.add(tableLabel);
 home.add(tableView);
 //home.add(list);
 home.add(listView);
-home.add(name);
 win1.open();
 
 

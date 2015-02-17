@@ -5,90 +5,77 @@ roster = {
 		title : "Forwards",
 		items : [
 			{name : "Claude Giroux",
-			description : "54 Points",
-			position : "Center"},
+			description : "54 Points"},
 			{name : "Jakub Voracek",
-			description : "59 Points",
-			position : "Right Wing"},
+			description : "59 Points"},
 	 		{name : "Sean Couturier",
-			description : "24 Points",
-			position : "Center"}, 
+			description : "24 Points"}, 
 			{name : "Michael Raffl",
-			description : "15 Points",
-			position : "Left Wing"}, 
+			description : "15 Points"}, 
 			{name : "Wayne Simmonds",
-			description : "34 Points",
-			position : "Right Wing"}]
+			description : "34 Points"}]
 	},
 	defensemen : {
 		title : "Defensemen",
 		items : [
 			{name : "Luke Schenn",
-			description : "8 Points",
-			position : "Defenseman"},
+			description : "8 Points"},
 			{name : "Mark Streit",
-			description : "36 Points",
-			position : "Defenseman"}, 
+			description : "36 Points"}, 
 			{name : "Brayden Coburn",
-			description : "6 Points",
-			position : "Defenseman"}, 
+			description : "6 Points"}, 
 			{name : "Andrew MacDonald",
-			description : "11 Points",
-			position : "Defenseman"}, 
-			{name : "Nick Grossman",
-			description : "8 Points",
-			position : "Defenseman"}]
+			description : "11 Points"}, 
+			{name : "Nick Grossmann",
+			description : "8 Points"}]
 	},
 	Goalies : {
 		title : "Goalies",
 		items : [
 			{name : "Steve Mason",
-			description : "2.27 GGA",
-			position : "Goalie"}, 
+			description : "2.27 GGA"}, 
 			{name : "Ray Emery",
-			description : "3.25 GAA",
-			position : "Goalie"}, 
+			description : "3.25 GAA"}, 
 			{name : "Rob Zepp",
-			description : "2.92 GAA",
-			position : "Goalie"}, 
+			description : "2.92 GAA"}, 
 			{name : "Anthony Stolarz",
-			description : "2.57 GAA",
-			position : "Goalie"}]
+			description : "2.57 GAA"}]
 	}
 
 };
 
-var getDetail = function(info) {
-	var detail = Ti.UI.createWindow({
-		backgroundColor : "#FBFBF4",
-		title : info.title
+var detail = function(info) {
+	var rosterDetail = Ti.UI.createWindow({
+		backgroundColor: "#FEFBFB",
+		title: info.title
 	});
-	var row = Ti.UI.createLabel({
-		text : info.description
+	var rowDetail = Ti.UI.createLabel({
+		text: info.descr
 
 	});
-	detail.add(row);
-	win.openWindow(detail);
+	rosterDetail.add(rowDetail);
+	
+	win1.openWindow(rosterDetail);
 };
 
-//Rows and Sections
 
+var rosterCollection = [];
 for (n in roster) {
-	var rosterCollection = [];
-
+	
 	var rosterSection = Ti.UI.createTableViewSection({
-		headerTitle : roster[n].title,
+		headerTitle: roster[n].title,
 		
 	});
 
 	for (var i = 0; i < roster[n].items.length; i++) {
 
 		var row = Ti.UI.createTableViewRow({
-			title : roster[n].items[i].name,
-			description: roster[n].items[i].description,
-			position: roster[n].items[i].position,
+			title: roster[n].items[i].name,
+			descr: roster[n].items[i].description,
 		});
-		
+		row.addEventListener('click', function(e){
+			detail(e.source);
+		});
 		rosterSection.add(row);
 	}
 	rosterCollection.push(rosterSection);
@@ -96,11 +83,13 @@ for (n in roster) {
 
 
 var rosterTable = Ti.UI.createTableView({
-	data: rosterCollection,
 	separatorColor: "black",
 	headerTitle: "Roster",
 	top: 0,
 });
+rosterTable.setData(rosterCollection);
+
+
 
 //device detection 
 var osName = Ti.Platform.name;
@@ -110,5 +99,4 @@ if(osName === "iPhone OS"){
 }
 
 exports.rosterTable = rosterTable;
-
 

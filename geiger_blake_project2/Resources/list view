@@ -1,0 +1,52 @@
+var winList = Ti.UI.createWindow({
+	backgroundColor: "#FEFBFB",
+});
+
+var list = Ti.UI.createListView({
+	backgroundColor: "#f9f0ec",
+	top:20,
+});
+var listSection = [];
+
+var forwards = Ti.UI.createListSection({
+	headerTitle: "Forwards",
+});
+var defensemen = Ti.UI.createListSection({
+	headerTitle: "Defensemen",
+});
+var goalies = Ti.UI.createListSection({
+	headerTitle: "Goalies",
+});
+
+forwardsData = [
+	{properties: {title: "Claude Giroux", image: "claude.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Jakub Voracek", image: "jakub.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Sean Couturier", image: "coots.jpeg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Michael Raffl", image: "raff.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Wayne Simmonds", image: "simmer.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+
+];
+forwards.setItems(forwardsData);
+
+
+defensemenData = [
+	{properties: {title: "Luke Schenn", image: "luke.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Mark Streit", image: "streit.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Brayden Coburn", image: "cobs.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Andrew MacDonald", image: "andrew.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Nick Grossmann", image: "grossman.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+];
+defensemen.setItems(defensemenData);
+
+goaliesData = [
+	{properties: {title: "Steve Mason", image: "mase.png", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Ray Emery", image: "razor.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Rob Zepp", image: "zepp.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+	{properties:{title:"Anothny Stolarz", stolarz: "tuna.jpg", accessoryType:Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE}},
+];
+goalies.setItems(goaliesData);
+
+listSection.push(forwards, defensemen, goalies);
+list.sections = listSection;
+winList.add(list);
+winList.open();
