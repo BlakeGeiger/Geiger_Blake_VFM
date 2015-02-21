@@ -18,7 +18,6 @@ var scrollableData = require("scrollable");
 
 data.scrollContainer.addEventListener('click', function(){
 		nav.openWindow(scrollableData.winScrollable);
-		console.log("hello");
 	});
 
 win.add(data.scrollContainer);
