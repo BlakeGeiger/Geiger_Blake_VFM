@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.dingus.project3</id>
-    <name>geiger_blake_project3</name>
+    <id>com.dingus.orientation</id>
+    <name>Orientation</name>
     <version>1.0</version>
     <publisher>blakegeiger</publisher>
     <url>http://</url>
-    <description>undefined</description>
+    <description/>
     <copyright>2015 by blakegeiger</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>de366a27-4fd1-4104-8488-0c99fd5e76f7</guid>
+    <guid>02ee852e-5944-41c9-b47e-a611a1f9f177</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>

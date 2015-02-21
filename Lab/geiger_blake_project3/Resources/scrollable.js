@@ -1,6 +1,6 @@
 var pWidth = Ti.Platform.displayCaps.platformWidth;
 
-var win = Ti.UI.createWindow({
+var winScrollable = Ti.UI.createWindow({
 	backgroundColor: 'black',
 });
 
@@ -287,5 +287,6 @@ var photosView = Ti.UI.createScrollableView({
     	pagani3Wrapper,
     	pagani4Wrapper ]
 });
-win.add(photosView);
-win.open();
+winScrollable.add(photosView);
+
+exports.winScrollable = winScrollable;
