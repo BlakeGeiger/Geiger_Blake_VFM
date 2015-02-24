@@ -10,16 +10,26 @@ var scrollContainer = Ti.UI.createScrollView({
 var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "cars");
 var galleryList = gallery.getDirectoryListing();
 
+
+
 for(var i=0; i<galleryList.length; i++){
 	
 	var imageView = Ti.UI.createImageView({
 		image: "cars/" + galleryList[i],
-		height: pHeight/6,
-		width: pWidth/4,
-		borderColor: "black",
+		// height: pHeight/6,
+		width: pWidth/1.25,
+		//borderColor: "black",
 		id: i,
 	});
-	scrollContainer.add(imageView);
+	var mask = Ti.UI.createView({
+	borderRadius: 0,
+	//borderColor: 'white',
+	backgroundColor: 'transparent',
+	height: pHeight/6,
+	width: pWidth/4,
+});
+	mask.add(imageView);
+	scrollContainer.add(mask);
 }
 
 
