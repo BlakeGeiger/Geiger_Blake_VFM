@@ -10,8 +10,6 @@ var scrollContainer = Ti.UI.createScrollView({
 var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "cars");
 var galleryList = gallery.getDirectoryListing();
 
-
-
 for(var i=0; i<galleryList.length; i++){
 	
 	var imageView = Ti.UI.createImageView({
@@ -19,6 +17,7 @@ for(var i=0; i<galleryList.length; i++){
 		height: pHeight/6,
 		width: pWidth/4,
 		borderColor: "black",
+		id: i,
 	});
 	scrollContainer.add(imageView);
 }

@@ -29,3 +29,4 @@ var photosView = Ti.UI.createScrollableView({
 winScrollable.add(photosView);
 
 exports.winScrollable = winScrollable;
+exports.photosView = photosView;

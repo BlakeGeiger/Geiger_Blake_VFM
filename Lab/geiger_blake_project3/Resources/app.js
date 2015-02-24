@@ -16,7 +16,8 @@ var photoWin = Ti.UI.createWindow({
 var data = require("secondary");
 var scrollableData = require("scrollable");
 
-data.scrollContainer.addEventListener('click', function(){
+data.scrollContainer.addEventListener('click', function(e){
+		scrollableData.photosView.currentPage = e.source.id,
 		nav.openWindow(scrollableData.winScrollable);
 	});
 
