@@ -2,7 +2,7 @@ var gallery = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "dg");
 var galleryList = gallery.getDirectoryListing();
 
 var winHome = Titanium.UI.createWindow({
-    backgroundImage: "dg/death.jpg",
+    backgroundImage: "death.jpg",
     title: 'Death Grips',
 });
 
@@ -14,15 +14,10 @@ var winGallery = Ti.UI.createWindow({
 	backgroundColor: "#FBFBF4",
 	 title: "Album Artwork",
  });
-
- var winTable = Ti.UI.createWindow({
+ 
+  var winTable = Ti.UI.createWindow({
  	backgroundColor: "FBFBF4",
  	title: "Track Listing"
- });
- 
- var winAudio = Ti.UI.createWindow({
- 	backgroundaColor: "FBFBF4",
- 	title: "Singles"
  });
 
 var artworkLabel = Ti.UI.createLabel({
@@ -73,17 +68,16 @@ var audioView = Ti.UI.createView({
 });
 
 
-//var dataArtwork = require("gallery");
+var dataArtwork = require("gallery");
 var dataTracks = require("table");
-// var dataSingles = require("singles");
+var dataSingles = require("singles");
 
 artworkView.add(artworkLabel);
 tableView.add(tableLabel);
 audioView.add(audioLabel);
 
 artworkView.addEventListener('click',function(){
-	// nav.openWindow(winTable);
-	// winTable.add(dataTable.rosterTable);
+	nav.openWindow(dataArtwork.winArtwork);
 });
 
 tableView.addEventListener('click', function(){
@@ -92,8 +86,7 @@ tableView.addEventListener('click', function(){
 });
 
 audioView.addEventListener('click', function(){
-	// nav.openWindow(winView);
-	// winView.add(dataView.list);
+	nav.openWindow(dataSingles.winSingles);
 });
 
 

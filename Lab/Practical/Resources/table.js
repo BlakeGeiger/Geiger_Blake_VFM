@@ -143,11 +143,10 @@ albums = {
 var detail = function(info) {
 	var albumDetail = Ti.UI.createWindow({
 		backgroundColor: "#FEFBFB",
-		title: info.title
+		title: info.title,
 	});
 	var rowDetail = Ti.UI.createLabel({
 		text: info.descr
-
 	});
 	albumDetail.add(rowDetail);
 	
